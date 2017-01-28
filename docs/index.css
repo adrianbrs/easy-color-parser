@@ -1,0 +1,222 @@
+html, body {
+    background-color: #FFFFFF;
+    color: #333;
+    font-family: Calibri, 'sans-serif', Arial;
+}
+
+#left-sidebar {
+    position: relative;
+    width: 540px;
+    left: 0;
+    padding: 0 32px;
+}
+
+header {
+    width: 100%;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    text-align: left;
+    font-size: 42pt;
+    margin-bottom: 2px;
+    border-left: 3px solid #2196F3;
+    padding-left: 12px;
+}
+
+h3 {
+    text-align: left;
+    margin-top: 0;
+    font-size: 14pt;
+    margin-bottom: 8px;
+    border-left: 3px solid #2196F3;
+    padding-left: 12px;
+}
+
+h4 {
+    text-align: left;
+    margin-top: 0;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+a {
+    color: #08d;
+    text-decoration: none;
+    margin-bottom: 4px;
+
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+
+a:hover {
+    color: #64B5F6;
+}
+
+a:active {
+    opacity: .6;
+}
+
+.content {
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, .05);
+    padding: 16px 16px 0 16px;
+    border-left: 3px solid #2196F3;
+}
+
+.top-content {
+    margin-left: 26px;
+}
+
+.form {
+    display: block;
+    width: 100%;
+    padding: 12px 12px 12px 0;
+    position: relative;
+}
+
+.form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.form #color-input {
+    border: none;
+    border-left: 3px solid #2196F3;
+    color: #333;
+    padding: 8px 12px;
+    outline: none;
+    background-color: #FFFFFF;
+    width: 50%;
+}
+
+.color-block {
+    width: 128px;
+    height: 128px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, .08);
+    padding: 12px;
+    float: left;
+}
+
+.color-block .color-inner {
+    border: 1px solid rgba(0, 0, 0, .06);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-block .color-inner div {
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    -webkit-transition: background-color 250ms ease-in-out;
+    -moz-transition: background-color 250ms ease-in-out;
+    -ms-transition: background-color 250ms ease-in-out;
+    -o-transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms ease-in-out;
+}
+
+.color-block .color-inner span {
+    display: block;
+    font-size: 14pt;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .1);
+}
+
+.color-info {
+    padding: 0;
+    float: left;
+    display: block;
+    position: relative;
+    list-style: none;
+    margin: 8px 8px 8px 16px;
+}
+
+.color-info li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    font-size: 14pt;
+}
+
+.color-info li span {
+    font-weight: normal;
+}
+
+.input-info {
+    display: block;
+    width: 100%;
+    clear: both;
+    padding: 12px 0;
+    list-style: none;
+}
+
+.input-info label {
+    font-weight: 700;
+    margin-right: 12px;
+    text-align: left;
+    display: inline-block;
+    font-size: 14pt;
+}
+
+.input-info label span {
+    font-weight: normal;
+    font-size: 12pt;
+    text-transform: uppercase;
+}
+
+.input-info input {
+    padding: 6px 12px;
+    border: none;
+    outline: none;
+    border-left: 3px solid #333;
+    margin: 4px 0;
+}
+
+.input-info li.red > label {
+    color: #F44336;
+}
+.input-info li.red > input {
+    border-left-color: #F44336;
+}
+.input-info li.green > label {
+    color: #4CAF50;
+}
+.input-info li.green > input {
+    border-left-color: #4CAF50;
+}
+.input-info li.blue > label {
+    color: #2196F3;
+}
+.input-info li.blue > input {
+    border-left-color: #2196F3;
+}
+.input-info li.alpha > label {
+    color: rgba(0, 0, 0, .35);
+}
+.input-info li.alpha > input {
+    border-left-color: rgba(0, 0, 0, .35);
+}
+
+footer {
+    clear: both;
+}
