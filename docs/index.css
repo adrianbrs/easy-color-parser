@@ -28,7 +28,8 @@ html, body {
 header {
     width: 100%;
     padding-bottom: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+    padding-top: 16px;
 }
 
 h1 {
