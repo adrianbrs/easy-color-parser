@@ -2,7 +2,7 @@
  * A class to convert colors hex, rgb, rgba, hsl, cmyk, etc ...
  * @author Adrian Cerbaro
  * @link https://github.com/cerbaro-adrian/js-simple-color-parser
- * @license GPL 3.0
+ * @license MIT
  */
 
 /**
