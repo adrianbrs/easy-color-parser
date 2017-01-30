@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EasyColorParser</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="mdi.css">
+
+    <script src="EasyColorParser.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav id="navbar">
+
+    <!-- Logo -->
+    <div class="logo">
+        <a class="logo-link" href="/js-easy-color-parser" title="EasyColorParser">
+            <img src="img/logo_extended_invert.png" alt="EasyColorParser" />
+        </a>
+    </div>
+
+</nav>
+
+<!-- Left Section -->
+<section id="left-section">
+
+    <!--<h4>Inspired by the project of <a href="http://www.phpied.com/rgb-color-parser-in-javascript/">Stoyan Stefanov</a></h4>-->
+
+    <!-- TABS -->
+    <div id="tabs">
+
+        <!-- TAB HEADER -->
+        <ul class="tabs">
+            <li><a class="tab-switcher active" href="#" data-tab="readme" onclick="openTab(event, 'readme');">HOME</a></li>
+            <li><a class="tab-switcher" href="#" data-tab="demo" onclick="openTab(event, 'demo')">DEMO</a></li>
+        </ul>
+
+        <!-- README TAB -->
+        <div id="readme" class="tab active">
+            <!-- Tab Title -->
+            <h1 class="tab-title">Getting Started</h1>
+
+            <!-- Tab Content -->
+            <div class="tab-content markdown-body">
+                <article class="markdown-body entry-content" itemprop="text">
+                    <h3><a id="converts-colors-between-formats-hex-rgb-rgba-hsl-hsla-e-cmyk" class="anchor" href="#converts-colors-between-formats-hex-rgb-rgba-hsl-hsla-e-cmyk" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Converts colors between formats hex, rgb, rgba, hsl, hsla e cmyk.</h3>
+
+                    <hr>
+
+                    <p>Inspired by the project of <a href="http://www.phpied.com/rgb-color-parser-in-javascript/">Stoyan Stefanov</a></p>
+
+                    <hr>
+
+                    <h3><a id="supported-color-formats" class="anchor" href="#supported-color-formats" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported color formats</h3>
+
+                    <ul>
+                        <li>HEX</li>
+                        <li>SHORT HEX</li>
+                        <li>RGB</li>
+                        <li>RGBA</li>
+                        <li>HSL</li>
+                        <li>HSLA</li>
+                        <li>CMYK</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3><a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use</h3>
+
+                    <p>Create an instance of the constructor by placing the color you want to convert</p>
+                    <p>You can put in any supported format</p>
+                    <p>Example:</p>
+
+                    <div class="highlight highlight-source-js">
+                    <pre><span class="pl-c">
+<span class="pl-c">//</span> Instance</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>(<span class="pl-s"><span class="pl-pds">"</span>#00AAFF<span class="pl-pds">"</span></span>); <span class="pl-c"><span class="pl-c">//</span> You can also add: # 0af, rgb (0, 170, 255), hsl (..., etc ...</span>
+
+<span class="pl-c"><span class="pl-c">//</span> Convert</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toHEX</span>();  <span class="pl-c"><span class="pl-c">//</span> Converts to HEX format   (Hexadecimal)</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toRGB</span>();  <span class="pl-c"><span class="pl-c">//</span> Converts to RGB format  (Red, Green, Blue)</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toRGBA</span>(); <span class="pl-c"><span class="pl-c">//</span> Converts to RGBA format (Red, Green, Blue, Alpha)</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toHSL</span>();  <span class="pl-c"><span class="pl-c">//</span> Converts to HSL format  (Hue, Saturation, Lightness)</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toHSLA</span>(); <span class="pl-c"><span class="pl-c">//</span> Converts to HSLA format (Hue, Saturation, Lightness, Alpha)</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toCMYK</span>(); <span class="pl-c"><span class="pl-c">//</span> Converts to CMYK format (Cyan, Magenta, Yellow, Key)</span></pre></div>
+
+                    <p>To convert the values of a color separately use:</p>
+
+                    <div class="highlight highlight-source-js"><pre><span class="pl-c">
+<span class="pl-c">//</span> RGB</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromRGB</span>(<span class="pl-c1">0</span>, <span class="pl-c1">170</span>, <span class="pl-c1">255</span>); <span class="pl-c"><span class="pl-c">//</span> Values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromRGB</span>([<span class="pl-c1">0</span>, <span class="pl-c1">170</span>, <span class="pl-c1">255</span>]); <span class="pl-c"><span class="pl-c">//</span> Array of values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromRGB</span>({ r<span class="pl-k">:</span> <span class="pl-c1">0</span>, g<span class="pl-k">:</span> <span class="pl-c1">170</span>, b<span class="pl-k">:</span> <span class="pl-c1">255</span> }); <span class="pl-c"><span class="pl-c">//</span> Object of values</span>
+
+<span class="pl-c"><span class="pl-c">//</span> RGBA</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromRGBA</span>(<span class="pl-c1">0</span>, <span class="pl-c1">170</span>, <span class="pl-c1">255</span>, <span class="pl-c1">1</span>); <span class="pl-c"><span class="pl-c">//</span> Values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromRGBA</span>([<span class="pl-c1">0</span>, <span class="pl-c1">170</span>, <span class="pl-c1">255</span>, <span class="pl-c1">1</span>]); <span class="pl-c"><span class="pl-c">//</span> Array of values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromRGBA</span>({ r<span class="pl-k">:</span> <span class="pl-c1">0</span>, g<span class="pl-k">:</span> <span class="pl-c1">170</span>, b<span class="pl-k">:</span> <span class="pl-c1">255</span>, a<span class="pl-k">:</span> <span class="pl-c1">1</span> }); <span class="pl-c"><span class="pl-c">//</span> Object of values</span>
+
+<span class="pl-c"><span class="pl-c">//</span> HSL</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromHSL</span>(<span class="pl-c1">200</span>, <span class="pl-c1">100</span>, <span class="pl-c1">50</span>); <span class="pl-c"><span class="pl-c">//</span> Values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromHSL</span>([<span class="pl-c1">200</span>, <span class="pl-c1">100</span>, <span class="pl-c1">50</span>]); <span class="pl-c"><span class="pl-c">//</span> Array of values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromHSL</span>({ h<span class="pl-k">:</span> <span class="pl-c1">200</span>, s<span class="pl-k">:</span> <span class="pl-c1">100</span>, l<span class="pl-k">:</span> <span class="pl-c1">50</span> }); <span class="pl-c"><span class="pl-c">//</span> Object of values</span>
+
+<span class="pl-c"><span class="pl-c">//</span> HSLA</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromHSLA</span>(<span class="pl-c1">200</span>, <span class="pl-c1">100</span>, <span class="pl-c1">50</span>, <span class="pl-c1">1</span>); <span class="pl-c"><span class="pl-c">//</span> Values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromHSLA</span>([<span class="pl-c1">200</span>, <span class="pl-c1">100</span>, <span class="pl-c1">50</span>, <span class="pl-c1">1</span>]); <span class="pl-c"><span class="pl-c">//</span> Array of values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromHSLA</span>({ h<span class="pl-k">:</span> <span class="pl-c1">200</span>, s<span class="pl-k">:</span> <span class="pl-c1">100</span>, l<span class="pl-k">:</span> <span class="pl-c1">50</span>, a<span class="pl-k">:</span> <span class="pl-c1">1</span> }); <span class="pl-c"><span class="pl-c">//</span> Object of values</span>
+
+<span class="pl-c"><span class="pl-c">//</span> CMYK</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromCMYK</span>(<span class="pl-c1">100</span>, <span class="pl-c1">33</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>); <span class="pl-c"><span class="pl-c">//</span> Values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromCMYK</span>([<span class="pl-c1">100</span>, <span class="pl-c1">33</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>]); <span class="pl-c"><span class="pl-c">//</span> Array of values</span>
+<span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>().<span class="pl-en">fromCMYK</span>({ c<span class="pl-k">:</span> <span class="pl-c1">100</span>, m<span class="pl-k">:</span> <span class="pl-c1">33</span>, y<span class="pl-k">:</span> <span class="pl-c1">0</span>, k<span class="pl-k">:</span> <span class="pl-c1">0</span> }); <span class="pl-c"><span class="pl-c">//</span> Object of values</span></pre>
+                    </div>
+
+                    <h2></h2>
+
+                    <p>You can also get the name of the color format that you have set to make it easier in some cases</p>
+
+                    <div class="highlight highlight-source-js"><pre><span class="pl-smi">parser</span>.<span class="pl-en">colorType</span>(); <span class="pl-c"><span class="pl-c">//</span> Returns the color format defined</span></pre></div>
+
+                    <h2></h2>
+
+                    <p>So you can also convert a color to a format from the format name</p>
+
+                    <div class="highlight highlight-source-js"><pre><span class="pl-smi">parser</span>.<span class="pl-en">to</span>(<span class="pl-s"><span class="pl-pds">"</span>RGBA<span class="pl-pds">"</span></span>) <span class="pl-c"><span class="pl-c">//</span> In this case it will return the color value in RGBA format, eg rgba (0, 170, 255, 1)</span></pre></div>
+
+                    <h2></h2>
+
+                    <h3><a id="css-color-table" class="anchor" href="#css-color-table" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS Color Table</h3>
+
+                    <p>You can pick up the CSS color table used to convert the color name to HEX, eg: white -&gt; #FFFFFF</p>
+                    <p>Read about <a href="http://www.w3schools.com/cssref/css_colors.asp">CSS Color Table</a></p>
+                    <p>To get the array of this table use:</p>
+
+                    <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> table <span class="pl-k">=</span> <span class="pl-smi">parser</span>.<span class="pl-smi">CSSColorTable</span>;</pre></div>
+
+                    <p>With this table you can convert colors just by name too</p>
+                    <p>For example:</p>
+
+                    <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> parser <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">EasyColorParser</span>(<span class="pl-s"><span class="pl-pds">"</span>aqua<span class="pl-pds">"</span></span>); <span class="pl-c"><span class="pl-c">//</span> Creates the instance from the css color name</span>
+<span class="pl-smi">parser</span>.<span class="pl-en">toHex</span>(); <span class="pl-c"><span class="pl-c">//</span> #00FFFF</span></pre></div>
+
+                    <h2></h2>
+
+                    <h3><a id="values" class="anchor" href="#values" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Values</h3>
+
+                    <p>To get the separate values for each format use:</p>
+
+                    <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> rgb <span class="pl-k">=</span> <span class="pl-smi">parser</span>.<span class="pl-smi">rgb</span>,     <span class="pl-c"><span class="pl-c">//</span> Returns an array with the RGB values  -&gt;  {r:Number, g:Number, b:Number}</span>
+    hsl <span class="pl-k">=</span> <span class="pl-smi">parser</span>.<span class="pl-smi">hsl</span>,     <span class="pl-c"><span class="pl-c">//</span> Returns an array with the HSL valuesL -&gt;  {h:Number, s:Number, l:Number}</span>
+    cmyk <span class="pl-k">=</span> <span class="pl-smi">parser</span>.<span class="pl-smi">cmyk</span>,   <span class="pl-c"><span class="pl-c">//</span> Returns an array with the CMYK values -&gt;  ...</span>
+    alpha <span class="pl-k">=</span> <span class="pl-smi">parser</span>.<span class="pl-smi">alpha</span>; <span class="pl-c"><span class="pl-c">//</span> Returns color transparency            -&gt;  1</span>
+
+<span class="pl-c"><span class="pl-c">//</span> RGB</span>
+<span class="pl-k">var</span> red <span class="pl-k">=</span> <span class="pl-smi">rgb</span>.<span class="pl-smi">r</span>;
+<span class="pl-k">var</span> green <span class="pl-k">=</span> <span class="pl-smi">rgb</span>.<span class="pl-smi">g</span>;
+<span class="pl-k">var</span> blue <span class="pl-k">=</span> <span class="pl-smi">rgb</span>.<span class="pl-smi">b</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> HSL</span>
+<span class="pl-k">var</span> hue <span class="pl-k">=</span> <span class="pl-smi">hsl</span>.<span class="pl-smi">h</span>;
+<span class="pl-k">var</span> saturation <span class="pl-k">=</span> <span class="pl-smi">hsl</span>.<span class="pl-smi">s</span>;
+<span class="pl-k">var</span> lightness <span class="pl-k">=</span> <span class="pl-smi">hsl</span>.<span class="pl-smi">l</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> CMYK</span>
+<span class="pl-k">var</span> cyan <span class="pl-k">=</span> <span class="pl-smi">cmyk</span>.<span class="pl-smi">c</span>;
+<span class="pl-k">var</span> magenta <span class="pl-k">=</span> <span class="pl-smi">cmyk</span>.<span class="pl-smi">m</span>;
+<span class="pl-k">var</span> yellow <span class="pl-k">=</span> <span class="pl-smi">cmyk</span>.<span class="pl-c1">y</span>;
+<span class="pl-k">var</span> key <span class="pl-k">=</span> <span class="pl-smi">cmyk</span>.<span class="pl-smi">k</span>;</pre></div>
+                </article>
+            </div>
+        </div>
+
+        <!-- DEMO TAB -->
+        <div id="demo" class="tab">
+            <!-- Tab Title -->
+            <h1 class="tab-title">Demonstration</h1>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <div class="color-view">
+                    <div class="form">
+                        <label for="color-input">Use: HEX, RGB, RGBA, HSL, CMYK.</label>
+                        <input type="text" id="color-input" name="color-input" onchange="javascript:demo(this);" value="#00AAFF" placeholder="rgb(255, 255, 255)">
+                    </div>
+
+                    <div class="color-block">
+                        <div class="color-inner"><span class="glyphicon glyphicon-eye-open"></span><div id="color"></div></div>
+                    </div>
+
+                    <ul class="color-info">
+                        <li>HEX: <span id="hex">#FFFFFF</span></li>
+                        <li>RGB: <span id="rgb">rgb(255, 255, 255)</span></li>
+                        <li>RGBA: <span id="rgba">rgba(255, 255, 255, 1)</span></li>
+                        <li>HSL: <span id="hsl">hsl(0, 0%, 100%)</span></li>
+                        <li>HSLA: <span id="hsla">hsla(0, 0%, 100%, 1)</span></li>
+                        <li>CMYK: <span id="cmyk">cmyk(0%, 0%, 0%, 0%)</span></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div id="rgba-view">
+                    <ul class="rgba">
+                        <li class="red"><label for="red" >R:</label><input onchange="javascript:demo(this);" type="text" id="red" name="red" placeholder="255"></li>
+                        <li class="green"><label for="green">G:</label><input onchange="javascript:demo(this);" type="text" id="green" name="green" placeholder="255"></li>
+                        <li class="blue"><label for="blue">B:</label><input onchange="javascript:demo(this);" type="text" id="blue" name="blue" placeholder="255"></li>
+                        <li class="alpha"><label for="alpha">A:</label><input onchange="javascript:demo(this);" type="text" id="alpha" name="alpha" placeholder="1"></li>
+                    </ul>
+                </div>
+
+                <div style="content:'';display:block;clear:both;"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Right Section -->
+<section id="right-section">
+
+    <!-- Centered Content -->
+    <div class="centered-content">
+
+        <!-- GitHub Link -->
+        <a class="github-link" href="https://github.com/cerbaroadrian/js-easy-color-parser" title="View on GitHub">
+            <div class="github-icon"><i class="mdi mdi-github-circle"></i></div>
+            <div class="github-button transition">GitHub</div>
+            <div class="version"><span>v1.0.0</span></div>
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="links">
+            <ul class="social-links">
+                <li id="github"><a href="https://github.com/cerbaroadrian" title="Fallow me on GitHub" class="transition"><i class="mdi mdi-github-circle"></i></a></li>
+                <li id="twitter"><a href="https://twitter.com/cerbaro_adrian" title="Fallow me on Twitter" class="transition"><i class="mdi mdi-twitter"></i></a></li>
+                <li id="facebook"><a href="https://facebook.com/cerbaro.adrian" title="Fallow me on Facebook" class="transition"><i class="mdi mdi-facebook"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="copy">
+            <p>Adrian Cerbaro &copy; 2017</p>
+        </div>
+
+    </footer>
+
+</section>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
