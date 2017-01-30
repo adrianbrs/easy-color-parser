@@ -111,7 +111,7 @@ var yellow = cmyk.y;
 var key = cmyk.k;
 ```
 
-### Links
-* [Easy Color Parser for Node.js](https://github.com/salomaosnff/easy-color-parser)
-* [Send a Pull Request](https://github.com/salomaosnff/easy-color-parser/pulls)
-* [My Github](https://github.com/cerbaroadrian)
+## Links
+- [Easy Color Parser for Node.js](https://github.com/salomaosnff/easy-color-parser)
+- [Send a Pull Request](https://github.com/salomaosnff/easy-color-parser/pulls)
+- [My Github](https://github.com/cerbaroadrian)
