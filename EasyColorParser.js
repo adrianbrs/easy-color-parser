@@ -1,5 +1,5 @@
 /**
- * A class to convert colors hex, rgb, rgba, hsl, cmyk, etc ...
+ * A class to convert colors between formats hex, rgb, rgba, hsl, cmyk, etc ...
  * @author Adrian Cerbaro
  * @link https://github.com/cerbaro-adrian/js-simple-color-parser
  * @license MIT
@@ -45,6 +45,10 @@ function EasyColorParser(colorString) {
                 m2 = l + s - l * s;
             m1 = l * 2 - m2;
             hue = h / 360;
+
+            /**
+             * @return {number}
+             */
             function HueToRgb(m1, m2, hue) {
                 var v;
                 if (hue < 0)
@@ -72,7 +76,7 @@ function EasyColorParser(colorString) {
         b = Math.round(b);
 
         return {r:parseInt(r), g:parseInt(g), b:parseInt(b)};
-    }
+    };
 
     /**
      * Convert RGB to HSL
@@ -91,7 +95,9 @@ function EasyColorParser(colorString) {
         if (g > 255) { g = 255; }
         if (b > 255) { b = 255; }
 
-        r /= 255, g /= 255, b /= 255;
+        r /= 255;
+        g /= 255;
+        b /= 255;
 
         var max = Math.max(r, g, b), min = Math.min(r, g, b);
         var h, s, l = (max + min) / 2;
@@ -124,7 +130,7 @@ function EasyColorParser(colorString) {
         l = isNaN(l) ? 0 : l;
 
         return {h:parseFloat(h), s:parseFloat(s), l:parseFloat(l)};
-    }
+    };
 
     /**
      * Convert CMYK to RGB
@@ -160,7 +166,7 @@ function EasyColorParser(colorString) {
         b = Math.round( b * 255 );
 
         return {r:parseInt(r), g:parseInt(g), b:parseInt(b)};
-    }
+    };
 
     /**
      * Convert RGB to CMYK
@@ -199,7 +205,7 @@ function EasyColorParser(colorString) {
         k = isNaN(k) ? 0 : k;
 
         return {c:parseInt(c), m:parseInt(m), y:parseInt(y), k:parseInt(k)};
-    }
+    };
 
     /**
      * Returns true if the parsing was success
@@ -228,195 +234,6 @@ function EasyColorParser(colorString) {
      * @type {number}
      */
     this.alpha = 1;
-
-    /**
-     * Convert RGB (red, green, blue) values to a new EasyColorParser class
-     * @param r
-     * @param g
-     * @param b
-     * @returns {EasyColorParser} new constructor with converted colors
-     */
-    this.fromRGB = function (r, g, b) {
-        var params = {
-            r:0,
-            g:0,
-            b:0
-        };
-
-        // Check params
-        if(!!r && r.constructor === Object) {
-            for(var key in params) {
-                if (r.hasOwnProperty(key)) {
-                    params[key] = r[key];
-                }
-            }
-        } else if(Array.isArray(r)) {
-            for(var i = 0; i < r.length; i++) {
-                params[Object.keys(params)[i]] = r[i];
-            }
-        } else {
-            params.r = r || 0;
-            params.g = g || 0;
-            params.b = b || 0;
-        }
-
-        var ecp = new EasyColorParser("rgb(" + params.r + ", " + params.g + ", " + params.b + ")");
-        this.success = ecp.success;
-        return ecp;
-    };
-
-    /**
-     * Convert RGBA (red, green, blue, alpha) values to a new EasyColorParser class
-     * @param r
-     * @param g
-     * @param b
-     * @param a
-     * @returns {EasyColorParser} new constructor with converted colors
-     */
-    this.fromRGBA = function (r, g, b, a) {
-        var params = {
-            r:0,
-            g:0,
-            b:0,
-            a:1
-        };
-
-        // Check params
-        if(!!r && r.constructor === Object) {
-            for(var key in params) {
-                if (r.hasOwnProperty(key)) {
-                    params[key] = r[key];
-                }
-            }
-        } else if(Array.isArray(r)) {
-            for(var i = 0; i < r.length; i++) {
-                params[Object.keys(params)[i]] = r[i];
-            }
-        } else {
-            params.r = r || 0;
-            params.g = g || 0;
-            params.b = b || 0;
-            params.a = a || 1;
-        }
-
-        var ecp = new EasyColorParser("rgba(" + params.r + ", " + params.g + ", " + params.b + ", " + params.a + ")");
-        this.success = ecp.success;
-        return ecp;
-    };
-
-    /**
-     * Convert HSL (hue, saturation, lightness) values to a new EasyColorParser class
-     * @param h
-     * @param s
-     * @param l
-     * @returns {EasyColorParser} new constructor with converted colors
-     */
-    this.fromHSL = function (h, s, l) {
-        var params = {
-            h:0,
-            s:0,
-            l:0
-        };
-
-        // Check params
-        if(!!h && h.constructor === Object) {
-            for(var key in params) {
-                if (h.hasOwnProperty(key)) {
-                    params[key] = h[key];
-                }
-            }
-        } else if(Array.isArray(h)) {
-            for(var i = 0; i < h.length; i++) {
-                params[Object.keys(params)[i]] = h[i];
-            }
-        } else {
-            params.h = h || 0;
-            params.s = s || 0;
-            params.l = l || 0;
-        }
-
-        var ecp = new EasyColorParser("hsl(" + params.h + ", " + params.s + "%, " + params.l + "%)");
-        this.success = ecp.success;
-        return ecp;
-    };
-
-    /**
-     * Convert HSLA (hue, saturation, lightness, alpha) values to a new EasyColorParser class
-     * @param h
-     * @param s
-     * @param l
-     * @param a
-     * @returns {EasyColorParser} new constructor with converted colors
-     */
-    this.fromHSLA = function (h, s, l, a) {
-        var params = {
-            h:0,
-            s:0,
-            l:0,
-            a:0
-        };
-
-        // Check params
-        if(!!h && h.constructor === Object) {
-            for(var key in params) {
-                if (h.hasOwnProperty(key)) {
-                    params[key] = h[key];
-                }
-            }
-        } else if(Array.isArray(h)) {
-            for(var i = 0; i < h.length; i++) {
-                params[Object.keys(params)[i]] = h[i];
-            }
-        } else {
-            params.h = h || 0;
-            params.s = s || 0;
-            params.l = l || 0;
-            params.a = a || 1;
-        }
-
-        var ecp = new EasyColorParser("hsla(" + params.h + ", " + params.s + "%, " + params.l + "%, " + params.a + ")");
-        this.success = ecp.success;
-        return ecp;
-    };
-
-    /**
-     * Convert CMYK (cyan, magenta, yellow, key) values to a new EasyColorParser class
-     * @param c
-     * @param m
-     * @param y
-     * @param k
-     * @returns {EasyColorParser} new constructor with converted colors
-     */
-    this.fromCMYK = function (c, m, y, k) {
-        var params = {
-            c:0,
-            m:0,
-            y:0,
-            k:0
-        };
-
-        // Check params
-        if(!!c && c.constructor === Object) {
-            for(var key in params) {
-                if (c.hasOwnProperty(key)) {
-                    params[key] = c[key];
-                }
-            }
-        } else if(Array.isArray(c)) {
-            for(var i = 0; i < c.length; i++) {
-                params[Object.keys(params)[i]] = c[i];
-            }
-        } else {
-            params.c = c || 0;
-            params.m = m || 0;
-            params.y = y || 0;
-            params.k = k || 0;
-        }
-
-        var ecp = new EasyColorParser("cmyk(" + params.c +"%, " + params.m + "%, " + params.y + "%, " + params.k + "%)");
-        this.success = ecp.success;
-        return ecp;
-    };
 
     // Return if constructor param is empty
     if(colorString == null) return;
@@ -698,7 +515,7 @@ function EasyColorParser(colorString) {
         },
         {
             name: "HEX",
-            regex: /^(\w{1})(\w{1})(\w{1})$/,
+            regex: /^(\w)(\w)(\w)$/,
             example: ['#92B', '098'],
             process: function (bytes){
                 var rgb = {r:parseInt(bytes[1] + bytes[1], 16), g:parseInt(bytes[2] + bytes[2], 16), b:parseInt(bytes[3] + bytes[3], 16)},
@@ -723,12 +540,11 @@ function EasyColorParser(colorString) {
         var bytes = regex.exec(colorString);
         if (bytes) {
             var channels = processor(bytes),
-                rgb      = channels[0],
                 hsl      = channels[1],
                 cmyk     = channels[2],
                 alpha    = channels[3];
 
-            this.rgb = rgb;
+            this.rgb = channels[0];
             this.hsl = hsl;
             this.cmyk = cmyk;
             this.alpha = alpha;
@@ -855,3 +671,193 @@ function EasyColorParser(colorString) {
         return type;
     }
 }
+
+
+/**
+ * Convert RGB (red, green, blue) values to a new EasyColorParser class
+ * @param r
+ * @param g
+ * @param b
+ * @returns {EasyColorParser} new constructor with converted colors
+ */
+EasyColorParser.fromRGB = function (r, g, b) {
+    var params = {
+        r:0,
+        g:0,
+        b:0
+    };
+
+    // Check params
+    if(!!r && r.constructor === Object) {
+        for(var key in params) {
+            if (r.hasOwnProperty(key)) {
+                params[key] = r[key];
+            }
+        }
+    } else if(Array.isArray(r)) {
+        for(var i = 0; i < r.length; i++) {
+            params[Object.keys(params)[i]] = r[i];
+        }
+    } else {
+        params.r = r || 0;
+        params.g = g || 0;
+        params.b = b || 0;
+    }
+
+    var ecp = new EasyColorParser("rgb(" + params.r + ", " + params.g + ", " + params.b + ")");
+    this.success = ecp.success;
+    return ecp;
+};
+
+/**
+ * Convert RGBA (red, green, blue, alpha) values to a new EasyColorParser class
+ * @param r
+ * @param g
+ * @param b
+ * @param a
+ * @returns {EasyColorParser} new constructor with converted colors
+ */
+EasyColorParser.fromRGBA = function (r, g, b, a) {
+    var params = {
+        r:0,
+        g:0,
+        b:0,
+        a:1
+    };
+
+    // Check params
+    if(!!r && r.constructor === Object) {
+        for(var key in params) {
+            if (r.hasOwnProperty(key)) {
+                params[key] = r[key];
+            }
+        }
+    } else if(Array.isArray(r)) {
+        for(var i = 0; i < r.length; i++) {
+            params[Object.keys(params)[i]] = r[i];
+        }
+    } else {
+        params.r = r || 0;
+        params.g = g || 0;
+        params.b = b || 0;
+        params.a = a || 1;
+    }
+
+    var ecp = new EasyColorParser("rgba(" + params.r + ", " + params.g + ", " + params.b + ", " + params.a + ")");
+    this.success = ecp.success;
+    return ecp;
+};
+
+/**
+ * Convert HSL (hue, saturation, lightness) values to a new EasyColorParser class
+ * @param h
+ * @param s
+ * @param l
+ * @returns {EasyColorParser} new constructor with converted colors
+ */
+EasyColorParser.fromHSL = function (h, s, l) {
+    var params = {
+        h:0,
+        s:0,
+        l:0
+    };
+
+    // Check params
+    if(!!h && h.constructor === Object) {
+        for(var key in params) {
+            if (h.hasOwnProperty(key)) {
+                params[key] = h[key];
+            }
+        }
+    } else if(Array.isArray(h)) {
+        for(var i = 0; i < h.length; i++) {
+            params[Object.keys(params)[i]] = h[i];
+        }
+    } else {
+        params.h = h || 0;
+        params.s = s || 0;
+        params.l = l || 0;
+    }
+
+    var ecp = new EasyColorParser("hsl(" + params.h + ", " + params.s + "%, " + params.l + "%)");
+    this.success = ecp.success;
+    return ecp;
+};
+
+/**
+ * Convert HSLA (hue, saturation, lightness, alpha) values to a new EasyColorParser class
+ * @param h
+ * @param s
+ * @param l
+ * @param a
+ * @returns {EasyColorParser} new constructor with converted colors
+ */
+EasyColorParser.fromHSLA = function (h, s, l, a) {
+    var params = {
+        h:0,
+        s:0,
+        l:0,
+        a:0
+    };
+
+    // Check params
+    if(!!h && h.constructor === Object) {
+        for(var key in params) {
+            if (h.hasOwnProperty(key)) {
+                params[key] = h[key];
+            }
+        }
+    } else if(Array.isArray(h)) {
+        for(var i = 0; i < h.length; i++) {
+            params[Object.keys(params)[i]] = h[i];
+        }
+    } else {
+        params.h = h || 0;
+        params.s = s || 0;
+        params.l = l || 0;
+        params.a = a || 1;
+    }
+
+    var ecp = new EasyColorParser("hsla(" + params.h + ", " + params.s + "%, " + params.l + "%, " + params.a + ")");
+    this.success = ecp.success;
+    return ecp;
+};
+
+/**
+ * Convert CMYK (cyan, magenta, yellow, key) values to a new EasyColorParser class
+ * @param c
+ * @param m
+ * @param y
+ * @param k
+ * @returns {EasyColorParser} new constructor with converted colors
+ */
+EasyColorParser.fromCMYK = function (c, m, y, k) {
+    var params = {
+        c:0,
+        m:0,
+        y:0,
+        k:0
+    };
+
+    // Check params
+    if(!!c && c.constructor === Object) {
+        for(var key in params) {
+            if (c.hasOwnProperty(key)) {
+                params[key] = c[key];
+            }
+        }
+    } else if(Array.isArray(c)) {
+        for(var i = 0; i < c.length; i++) {
+            params[Object.keys(params)[i]] = c[i];
+        }
+    } else {
+        params.c = c || 0;
+        params.m = m || 0;
+        params.y = y || 0;
+        params.k = k || 0;
+    }
+
+    var ecp = new EasyColorParser("cmyk(" + params.c +"%, " + params.m + "%, " + params.y + "%, " + params.k + "%)");
+    this.success = ecp.success;
+    return ecp;
+};
