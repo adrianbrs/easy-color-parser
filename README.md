@@ -1,6 +1,8 @@
 # JavaScript Easy Color Parser for Node JS
 ### Converts colors to formats hex, rgb, rgba, hsl, hsla and cmyk.
 
+[![Build Status](https://travis-ci.org/salomaosnff/easy-color-parser.svg?branch=master)](https://travis-ci.org/salomaosnff/easy-color-parser)
+[![downloads](https://img.shields.io/npm/dm/easy-color.svg)](https://www.npmjs.com/package/easy-color)
 ---
 Fork of [Adrian's](https://github.com/cerbaroadrian) [project](https://cerbaroadrian.github.io/easy-color-parser)
 

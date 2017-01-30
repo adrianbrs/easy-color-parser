@@ -1,6 +1,6 @@
 {
   "name": "easy-color",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Converts colors between formats hex, rgb, rgba, hsl, hsla and cmyk.",
   "main": "index.js",
   "directories": {
