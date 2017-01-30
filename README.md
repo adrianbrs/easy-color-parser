@@ -2,7 +2,7 @@
 ### Converts colors between formats hex, rgb, rgba, hsl, hsla e cmyk.
 
 ---
-Inspired by the project of [Stoyan Stefanov](http://www.phpied.com/rgb-color-parser-in-javascript/)
+Inspired by the project of [Stoyan Stefanov](http://www.phpied.com/rgb-color-parser-in-javascript/){:target="_blank"}
 
 ---
 
@@ -74,7 +74,7 @@ parser.to("RGBA") // In this case it will return the color value in RGBA format,
 
 ### CSS Color Table
 You can pick up the CSS color table used to convert the color name to HEX, eg: white -> #FFFFFF <br />
-Read about [CSS Color Table](http://www.w3schools.com/cssref/css_colors.asp) <br />
+Read about [CSS Color Table](http://www.w3schools.com/cssref/css_colors.asp){:target="_blank"} <br />
 To get the array of this table use:
 ```js
 var table = parser.CSSColorTable;
