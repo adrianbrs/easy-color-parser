@@ -17,7 +17,7 @@ Inspired by the project of [Stoyan Stefanov](http://www.phpied.com/rgb-color-par
 
 ---
 
-### Simple and East to use
+### Simple and Easy to use
 Create an instance of the constructor by placing the color you want to convert <br />
 You can put in any supported format <br />
 Example:
