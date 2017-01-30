@@ -1,5 +1,6 @@
 {
   "name": "easy-color",
+  "version": "1.0.3",
   "main": "EasyColorParser.js",
   "description": "A JavaScript class to converts colors between formats hex, rgb, rgba, hsl, hsla e cmyk.",
   "keywords": [
