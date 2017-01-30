@@ -1,0 +1,32 @@
+{
+  "name": "easy-color",
+  "main": "EasyColorParser.js",
+  "description": "A JavaScript class to converts colors between formats hex, rgb, rgba, hsl, hsla e cmyk.",
+  "keywords": [
+    "color",
+    "parser",
+    "converter",
+    "hex",
+    "rgb",
+    "rgba",
+    "hsl",
+    "hsla",
+    "cmyk"
+  ],
+  "authors": [
+    "Adrian Cerbaro <adriancerbaro@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cerbaroadrian/easy-color-parser.git"
+  },
+  "license": "MIT",
+  "homepage": "https://cerbaroadrian.github.io/easy-color-parser/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
