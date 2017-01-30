@@ -1,12 +1,12 @@
 # JavaScript Easy Color Parser
-### Classe em javascript para conversão de cores hex, rgb, rgba, hsl, hsla e cmyk.
+### Converts colors between formats hex, rgb, rgba, hsl, hsla e cmyk.
 
 ---
-Inspirado no projeto de [Stoyan Stefanov](http://www.phpied.com/rgb-color-parser-in-javascript/)
+Inspired by the project of [Stoyan Stefanov](http://www.phpied.com/rgb-color-parser-in-javascript/)
 
 ---
 
-### Formatos de cores suportadas
+### Supported color formats
 * HEX
 * SHORT HEX
 * RGB
@@ -17,82 +17,82 @@ Inspirado no projeto de [Stoyan Stefanov](http://www.phpied.com/rgb-color-parser
 
 ---
 
-### Simples e Fácil de usar
-Crie uma instância do construtor colocando a cor que deseja converter <br />
-Você pode colocar em qualquer formato suportado <br />
-Exemplo:
+### Simple and East to use
+Create an instance of the constructor by placing the color you want to convert <br />
+You can put in any supported format <br />
+Example:
 ```js
-// Instancie
-var parser = new EasyColorParser("#00AAFF"); // Pode botar também: #0af, rgb(0, 170, 255), hsl(..., etc...
+// Instance
+var parser = new EasyColorParser("#00AAFF"); // You can also add: # 0af, rgb (0, 170, 255), hsl (..., etc ...
 
 // Converta
-parser.toHEX();  // Converte para o format HEX   (Hexadecimal)
-parser.toRGB();  // Converte para o formato RGB  (Red, Green, Blue)
-parser.toRGBA(); // Converte para o formato RGBA (Red, Green, Blue, Alpha)
-parser.toHSL();  // Converte para o formato HSL  (Hue, Saturation, Lightness)
-parser.toHSLA(); // Converte para o formato HSLA (Hue, Saturation, Lightness, Alpha)
-parser.toCMYK(); // Converte para o formato CMYK (Cyan, Magenta, Yellow, Key)
+parser.toHEX();  // Converts to HEX format   (Hexadecimal)
+parser.toRGB();  // Converts to RGB format  (Red, Green, Blue)
+parser.toRGBA(); // Converts to RGBA format (Red, Green, Blue, Alpha)
+parser.toHSL();  // Converts to HSL format  (Hue, Saturation, Lightness)
+parser.toHSLA(); // Converts to HSLA format (Hue, Saturation, Lightness, Alpha)
+parser.toCMYK(); // Converts to CMYK format (Cyan, Magenta, Yellow, Key)
 ```
-Para converter os valores de uma cor separadamente use:
+To convert the values of a color separately use:
 ```js
 // RGB
-var parser = new EasyColorParser().fromRGB(0, 170, 255); // Valores separados
-var parser = new EasyColorParser().fromRGB([0, 170, 255]); // Array
-var parser = new EasyColorParser().fromRGB({ r: 0, g: 170, b: 255 }); // Object
+var parser = new EasyColorParser().fromRGB(0, 170, 255); // Values
+var parser = new EasyColorParser().fromRGB([0, 170, 255]); // Array of values
+var parser = new EasyColorParser().fromRGB({ r: 0, g: 170, b: 255 }); // Object of values
 
 // RGBA
-var parser = new EasyColorParser().fromRGBA(0, 170, 255, 1); // Valores separados
-var parser = new EasyColorParser().fromRGBA([0, 170, 255, 1]); // Array
-var parser = new EasyColorParser().fromRGBA({ r: 0, g: 170, b: 255, a: 1 }); // Object
+var parser = new EasyColorParser().fromRGBA(0, 170, 255, 1); // Values
+var parser = new EasyColorParser().fromRGBA([0, 170, 255, 1]); // Array of values
+var parser = new EasyColorParser().fromRGBA({ r: 0, g: 170, b: 255, a: 1 }); // Object of values
 
 // HSL
-var parser = new EasyColorParser().fromHSL(200, 100, 50); // Valores separados
-var parser = new EasyColorParser().fromHSL([200, 100, 50]); // Array
-var parser = new EasyColorParser().fromHSL({ h: 200, s: 100, l: 50 }); // Object
+var parser = new EasyColorParser().fromHSL(200, 100, 50); // Values
+var parser = new EasyColorParser().fromHSL([200, 100, 50]); // Array of values
+var parser = new EasyColorParser().fromHSL({ h: 200, s: 100, l: 50 }); // Object of values
 
 // HSLA
-var parser = new EasyColorParser().fromHSLA(200, 100, 50, 1); // Valores separados
-var parser = new EasyColorParser().fromHSLA([200, 100, 50, 1]); // Array
-var parser = new EasyColorParser().fromHSLA({ h: 200, s: 100, l: 50, a: 1 }); // Object
+var parser = new EasyColorParser().fromHSLA(200, 100, 50, 1); // Values
+var parser = new EasyColorParser().fromHSLA([200, 100, 50, 1]); // Array of valuesReturns the color format defined
+var parser = new EasyColorParser().fromHSLA({ h: 200, s: 100, l: 50, a: 1 }); // Object of values
 
 // CMYK
-var parser = new EasyColorParser().fromCMYK(100, 33, 0, 0); // Valores separados
-var parser = new EasyColorParser().fromCMYK([100, 33, 0, 0]); // Array
-var parser = new EasyColorParser().fromCMYK({ c: 100, m: 33, y: 0, k: 0 }); // Object
+var parser = new EasyColorParser().fromCMYK(100, 33, 0, 0); // Values
+var parser = new EasyColorParser().fromCMYK([100, 33, 0, 0]); // Array of values
+var parser = new EasyColorParser().fromCMYK({ c: 100, m: 33, y: 0, k: 0 }); // Object of values
 ```
 --
-Você também pode pegar o nome do formato da cor que você definiu para facilitar em alguns casos
+You can also get the name of the color format that you have set to make it easier in some cases
 ```js
-parser.colorType(); // Retorna o formato da cor definida
+parser.colorType(); // Returns the color format defined
 ```
 --
-Assim você também pode converter uma cor para um formato a partir do nome do formato
+So you can also convert a color to a format from the format name
 ```js
-parser.to("RGBA") // Nesse caso ele ira retornar o valor da cor no formato RGBA, ex: rgba(0, 170, 255, 1)
+parser.to("RGBA") // In this case it will return the color value in RGBA format, eg rgba (0, 170, 255, 1)
 ```
 --
 
-### Tabela de Cores CSS
-Você pode pegar a tabela de cores CSS usada para converter o nome da cor em HEX, ex: white -> #FFFFFF <br />
-[Tabela de Cores CSS](http://www.w3schools.com/cssref/css_colors.asp) <br />
-Para pegar a array dessa tabela use:
+### CSS Color Table
+You can pick up the CSS color table used to convert the color name to HEX, eg: white -> #FFFFFF <br />
+Read about [CSS Color Table](http://www.w3schools.com/cssref/css_colors.asp) <br />
+To get the array of this table use:
 ```js
 var table = parser.CSSColorTable;
 ```
-Com essa tabela você pode converter cores apenas pelo nome também <br />
-Por exemplo:
+With this table you can convert colors just by name too <br />
+For example:
 ```js
-var parser = new EasyColorParser("aqua"); // Cria a instância a partir do nome da cor css
+var parser = new EasyColorParser("aqua"); // Creates the instance from the css color name
 parser.toHex(); // #00FFFF
 ```
 --
-### Valores
-Para pegar os valores separados de cada formato use:
+### Values
+To get the separate values for each format use:
 ```js
-var rgb = parser.rgb,     // Retorna uma array com os valores RGB  ->  {r:Number, g:Number, b:Number}
-    hsl = parser.hsl,     // Retorna uma array com os valores HSL  ->  {h:Number, s:Number, l:Number}
-    cmyk = parser.cmyk,   // Retorna uma array com os valores CMYK ->  ...
-    alpha = parser.alpha; // Retorna a transparência da cor        ->  1
+var rgb = parser.rgb,     // Returns an array with the RGB values  ->  {r:Number, g:Number, b:Number}
+    hsl = parser.hsl,     // Returns an array with the HSL valuesL ->  {h:Number, s:Number, l:Number}
+    cmyk = parser.cmyk,   // Returns an array with the CMYK values ->  ...
+    alpha = parser.alpha; // Returns color transparency            ->  1
 
 // RGB
 var red = rgb.r;
@@ -110,4 +110,3 @@ var magenta = cmyk.m;
 var yellow = cmyk.y;
 var key = cmyk.k;
 ```
----
