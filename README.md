@@ -52,7 +52,7 @@ var parser = new EasyColorParser().fromHSL({ h: 200, s: 100, l: 50 }); // Object
 
 // HSLA
 var parser = new EasyColorParser().fromHSLA(200, 100, 50, 1); // Values
-var parser = new EasyColorParser().fromHSLA([200, 100, 50, 1]); // Array of valuesReturns the color format defined
+var parser = new EasyColorParser().fromHSLA([200, 100, 50, 1]); // Array of values
 var parser = new EasyColorParser().fromHSLA({ h: 200, s: 100, l: 50, a: 1 }); // Object of values
 
 // CMYK
