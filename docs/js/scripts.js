@@ -115,7 +115,7 @@ function demo(el) {
                     break;
             }
             console.log(params);
-            color = new EasyColorParser().fromRGBA(params);
+            color = EasyColorParser.fromRGBA(params);
             console.log(color.toRGBA());
         }
     }
