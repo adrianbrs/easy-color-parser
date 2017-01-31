@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/salomaosnff/easy-color-parser.svg?branch=master)](https://travis-ci.org/salomaosnff/easy-color-parser/) [![npm](https://img.shields.io/npm/v/easy-color.svg)](https://www.npmjs.com/package/easy-color) [![downloads](https://img.shields.io/npm/dm/easy-color.svg)](https://www.npmjs.com/package/easy-color)
 
-# JavaScript Easy Color Parser
+<img src="docs/img/logo_extended.png" />
+--
 ### Converts colors between formats hex, rgb, rgba, hsl, hsla e cmyk.
 
 ---
