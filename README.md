@@ -10,7 +10,7 @@ Inspired by the project of <a href="http://www.phpied.com/rgb-color-parser-in-ja
 ---
 
 ## Bower install
-```
+```sh
 bower install easy-color
 ```
 
