@@ -44,29 +44,29 @@ parser.toCMYK(); // Converts to CMYK format (Cyan, Magenta, Yellow, Key)
 To convert the values of a color separately use:
 ```js
 // RGB
-var parser = new EasyColorParser().fromRGB(0, 170, 255); // Values
-var parser = new EasyColorParser().fromRGB([0, 170, 255]); // Array of values
-var parser = new EasyColorParser().fromRGB({ r: 0, g: 170, b: 255 }); // Object of values
+var parser = EasyColorParser.fromRGB(0, 170, 255); // Values
+var parser = EasyColorParser.fromRGB([0, 170, 255]); // Array of values
+var parser = EasyColorParser.fromRGB({ r: 0, g: 170, b: 255 }); // Object of values
 
 // RGBA
-var parser = new EasyColorParser().fromRGBA(0, 170, 255, 1); // Values
-var parser = new EasyColorParser().fromRGBA([0, 170, 255, 1]); // Array of values
-var parser = new EasyColorParser().fromRGBA({ r: 0, g: 170, b: 255, a: 1 }); // Object of values
+var parser = EasyColorParser.fromRGBA(0, 170, 255, 1); // Values
+var parser = EasyColorParser.fromRGBA([0, 170, 255, 1]); // Array of values
+var parser = EasyColorParser.fromRGBA({ r: 0, g: 170, b: 255, a: 1 }); // Object of values
 
 // HSL
-var parser = new EasyColorParser().fromHSL(200, 100, 50); // Values
-var parser = new EasyColorParser().fromHSL([200, 100, 50]); // Array of values
-var parser = new EasyColorParser().fromHSL({ h: 200, s: 100, l: 50 }); // Object of values
+var parser = EasyColorParser.fromHSL(200, 100, 50); // Values
+var parser = EasyColorParser.fromHSL([200, 100, 50]); // Array of values
+var parser = EasyColorParser.fromHSL({ h: 200, s: 100, l: 50 }); // Object of values
 
 // HSLA
-var parser = new EasyColorParser().fromHSLA(200, 100, 50, 1); // Values
-var parser = new EasyColorParser().fromHSLA([200, 100, 50, 1]); // Array of values
-var parser = new EasyColorParser().fromHSLA({ h: 200, s: 100, l: 50, a: 1 }); // Object of values
+var parser = EasyColorParser.fromHSLA(200, 100, 50, 1); // Values
+var parser = EasyColorParser.fromHSLA([200, 100, 50, 1]); // Array of values
+var parser = EasyColorParser.fromHSLA({ h: 200, s: 100, l: 50, a: 1 }); // Object of values
 
 // CMYK
-var parser = new EasyColorParser().fromCMYK(100, 33, 0, 0); // Values
-var parser = new EasyColorParser().fromCMYK([100, 33, 0, 0]); // Array of values
-var parser = new EasyColorParser().fromCMYK({ c: 100, m: 33, y: 0, k: 0 }); // Object of values
+var parser = EasyColorParser.fromCMYK(100, 33, 0, 0); // Values
+var parser = EasyColorParser.fromCMYK([100, 33, 0, 0]); // Array of values
+var parser = EasyColorParser.fromCMYK({ c: 100, m: 33, y: 0, k: 0 }); // Object of values
 ```
 --
 You can also get the name of the color format that you have set to make it easier in some cases
